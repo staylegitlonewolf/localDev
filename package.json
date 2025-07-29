@@ -6,7 +6,10 @@
   "scripts": {
     "start": "python -m http.server 8000",
     "serve": "npx http-server -p 8000",
-    "dev": "npx live-server --port=8000"
+    "dev": "npx serve -p 8000",
+    "dev-live": "npx serve -p 8000 --live",
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests specified'"
   },
   "keywords": [
     "template",
@@ -20,7 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.1.1",
-    "live-server": "^1.2.2"
+    "serve": "^14.2.1"
   },
   "repository": {
     "type": "git",
@@ -30,4 +33,4 @@
     "url": "https://github.com/yourusername/LVA.studio-Template/issues"
   },
   "homepage": "https://github.com/yourusername/LVA.studio-Template#readme"
-} 
+}
