@@ -1,36 +1,35 @@
 {
-  "name": "lva-studio-template",
-  "version": "1.0.0",
-  "description": "A clean, modern frontend template for building professional web applications",
+  "name": "lva-studio-website",
+  "version": "2.0.0",
+  "description": "LVA.studio™ - Full-Service Digital Solutions. Professional web development, solar solutions, health insurance, and NIL partnerships.",
   "main": "index.html",
   "scripts": {
-    "start": "python -m http.server 8000",
-    "serve": "npx http-server -p 8000",
+    "start": "npx serve -p 8000",
     "dev": "npx serve -p 8000",
-    "dev-live": "npx serve -p 8000 --live",
-    "build": "echo 'No build step required for static site'",
-    "test": "echo 'No tests specified'"
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests specified'",
+    "deploy": "echo 'Ready for deployment'"
   },
   "keywords": [
-    "template",
-    "frontend",
-    "web",
-    "portal",
-    "responsive",
-    "modern"
+    "web-development",
+    "solar-solutions",
+    "health-insurance",
+    "nil-partnerships",
+    "digital-agency",
+    "modern-website",
+    "responsive-design"
   ],
-  "author": "LVA.studio",
+  "author": "LVA.studio™",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^14.1.1",
     "serve": "^14.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/LVA.studio-Template.git"
+    "url": "https://github.com/staylegitlonewolf/localDev.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/LVA.studio-Template/issues"
+    "url": "https://github.com/staylegitlonewolf/localDev/issues"
   },
-  "homepage": "https://github.com/yourusername/LVA.studio-Template#readme"
+  "homepage": "https://lva.studio"
 }

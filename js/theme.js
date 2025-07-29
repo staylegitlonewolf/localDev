@@ -18,10 +18,6 @@ export function setupThemeAndLogo(restorePortalContent, attachCardEvents) {
     const isClean = document.body.classList.contains('clean-mode');
     button.classList.remove('light-btn', 'epic-btn');
     button.classList.add(isClean ? 'light-btn' : 'epic-btn');
-    document.getElementById('logo-btn').addEventListener('click', () => {
-      if (typeof window.enterPortal === 'function') {
-        window.enterPortal();
-      }
-    });
+    // Removed conflicting logo button event listener - using onclick in HTML instead
   });
 } 

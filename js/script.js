@@ -298,10 +298,11 @@ function restorePortalContent() {
   } else {
     // If no backup exists, reload the page to get fresh portal content
     window.location.reload();
+    return; // Exit early if reloading
   }
   
-  // Scroll to top for better UX
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Simple scroll to top without complex logic
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 // --- Theme Toggle Logic ---
 // (Removed top menu toggle logic, handled by button in side menu)

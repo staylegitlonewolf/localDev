@@ -1,120 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>LVA.studio™ Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/epic.css" />
-  <link rel="stylesheet" href="css/light.css" />
-  <link rel="stylesheet" href="css/cards.css" />
-  <link rel="stylesheet" href="css/buttons.css" />
-  <link rel="stylesheet" href="css/cards-portal.css" />
-  <link rel="stylesheet" href="css/health-insurance.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVA.studio™ - Full-Service Digital Solutions</title>
+    <meta name="description" content="Professional web development, solar solutions, health insurance, and NIL partnerships. Living Victorious Always.">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <video id="epic-bg-video" class="epic-bg-video" autoplay loop muted playsinline style="display:none">
-    <source src="media/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  <!-- Fixed Top Menu -->
-  <div class="top-menu">
-    <div class="menu-group">
-      <button id="side-menu-toggle" class="hamburger-btn" aria-label="Open side menu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <span class="brand-text"> Living Victorious Always™ </span>
-      <img
-        src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png"
-        alt="LVA Logo"
-        class="menu-icon"
-        id="logo-btn"
-        style="cursor:pointer;"
-        onclick="restorePortalContent()"
-      />
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Logo" class="logo-img">
+                <span class="logo-text">LVA.studio™</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop class="hero-video">
+                <source src="media/background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Living Victorious Always</span>
+                <span class="hero-subtitle">Full-Service Digital Solutions</span>
+            </h1>
+            <p class="hero-description">
+                We build websites, connect you with solar solutions, secure your health insurance, 
+                and maximize your NIL opportunities. Your success is our mission.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for modern businesses and individuals</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Web Development -->
+                <div class="service-card" data-service="web">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites that convert visitors into customers. Built with modern technologies and optimized for performance.</p>
+                    <ul class="service-features">
+                        <li>Custom Design & Development</li>
+                        <li>SEO Optimization</li>
+                        <li>Mobile-First Responsive</li>
+                        <li>E-commerce Solutions</li>
+                    </ul>
+                    <div class="service-cta">
+                        <button class="btn btn-outline" onclick="showServiceDetails('web')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Solar Solutions -->
+                <div class="service-card" data-service="solar">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Solutions</h3>
+                    <p>Connect with trusted solar providers to reduce energy costs and contribute to a sustainable future.</p>
+                    <ul class="service-features">
+                        <li>Residential & Commercial</li>
+                        <li>Expert Consultation</li>
+                        <li>Installation Support</li>
+                        <li>Financing Options</li>
+                    </ul>
+                    <div class="service-cta">
+                        <button class="btn btn-outline" onclick="showServiceDetails('solar')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Health Insurance -->
+                <div class="service-card" data-service="health">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Health Insurance</h3>
+                    <p>Comprehensive health insurance solutions for individuals, families, and businesses.</p>
+                    <ul class="service-features">
+                        <li>Individual & Family Plans</li>
+                        <li>Business Group Coverage</li>
+                        <li>Medicare Supplements</li>
+                        <li>Expert Guidance</li>
+                    </ul>
+                    <div class="service-cta">
+                        <button class="btn btn-outline" onclick="showServiceDetails('health')">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- NIL Partnerships -->
+                <div class="service-card" data-service="nil">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>NIL Partnerships</h3>
+                    <p>Maximize your Name, Image, and Likeness opportunities with strategic partnerships and brand development.</p>
+                    <ul class="service-features">
+                        <li>Brand Development</li>
+                        <li>Sponsorship Deals</li>
+                        <li>Marketing Strategy</li>
+                        <li>Legal Guidance</li>
+                    </ul>
+                    <div class="service-cta">
+                        <button class="btn btn-outline" onclick="showServiceDetails('nil')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About LVA.studio™</h2>
+                    <p>We're a full-service digital agency committed to helping businesses and individuals thrive in the modern digital landscape. Our comprehensive approach combines cutting-edge web development with strategic partnerships in solar energy, health insurance, and NIL opportunities.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your next project? Let's discuss how we can help you succeed.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@lva.studio</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Nationwide Service</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="web">Web Development</option>
+                            <option value="solar">Solar Solutions</option>
+                            <option value="health">Health Insurance</option>
+                            <option value="nil">NIL Partnerships</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Logo">
+                        <span>LVA.studio™</span>
+                    </div>
+                    <p>Living Victorious Always - Your partner in digital success.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Solar Solutions</a></li>
+                        <li><a href="#services">Health Insurance</a></li>
+                        <li><a href="#services">NIL Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LVA.studio™. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
     </div>
-  </div>
-  
-  <!-- Side Menu and Overlay -->
-  <div id="side-menu-overlay" class="side-menu-overlay" style="display:none;"></div>
-  <nav id="side-menu" class="side-menu" style="display:none;">
-    <button id="close-side-menu" class="close-side-menu" aria-label="Close side menu">&times;</button>
-    <div class="side-menu-content">
-      <button class="toggle-mode-btn light-btn" onclick="toggleFontMode(this)" aria-label="Toggle theme">
-        <svg class="lightbulb-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g>
-            <ellipse cx="16" cy="13" rx="8" ry="10" fill="#fffbe6" class="bulb-glow"/>
-            <path d="M16 3C10.477 3 6 7.477 6 13c0 3.866 2.5 6.5 4 8v2a2 2 0 002 2h4a2 2 0 002-2v-2c1.5-1.5 4-4.134 4-8 0-5.523-4.477-10-10-10z" fill="#ffe066" stroke="#bfa600" stroke-width="2"/>
-            <rect x="13" y="25" width="6" height="3" rx="1.5" fill="#bfa600"/>
-            <rect x="14" y="28" width="4" height="2" rx="1" fill="#bfa600"/>
-          </g>
-        </svg>
-      </button>
-      <button id="fullscreen-toggle" class="fullscreen-btn">Fullscreen</button>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
     </div>
-  </nav>
-  
-  <!-- Main Content Area -->
-  <div id="main-content">
-    <!-- Portal Layout (hidden by default) -->
-    <div id="layout" style="display:none;">
-      <div id="spinner"></div>
-      <div id="progress">Loading...</div>
-      <div id="quotes">"Creating Clarity in the Cloud — Health Insurance to Home Design"</div>
-    </div>
-    
-    <!-- Service Content Containers (hidden by default, shown when navigated) -->
-    <div id="health-root" style="display:none;"></div>
-    <div id="solar-root" style="display:none;"></div>
-    <div id="contracting-root" style="display:none;"></div>
-    <div id="model-root" style="display:none;"></div>
-    <div id="wix-root" style="display:none;"></div>
-    <div id="nil-root" style="display:none;"></div>
-    
-    <!-- Service Content Container (for portal or shop) -->
-    <div id="portalContent"></div>
-  </div>
-  
-  <footer id="footer-line">
-    <p style="text-align: center; font-weight: bold;">LVA.studio™</p>
-  </footer>
-  
-  <script src="js/script.js"></script>
-  <script src="js/health-insurance.js"></script>
-  <script src="js/solar.js"></script>
-  <script src="js/contracting.js"></script>
-  <script src="js/3d-model.js"></script>
-  <script src="js/wix.js"></script>
-  <script src="js/nilpartners.js"></script>
-  <script src="js/portal.js"></script>
-  <script src="js/cards.js"></script>
-  <script src="js/cards-portal.js"></script>
-  <script src="js/shop.js"></script>
-  <script src="js/main.js"></script>
-  
-  <script type="module">
-    import { toggleFontMode } from './js/theme.js';
-    window.toggleFontMode = toggleFontMode;
-    // On load, ensure epic mode is set
-    document.body.classList.remove('clean-mode');
-    document.body.classList.add('epic-mode');
-    const bgVideo = document.getElementById('epic-bg-video');
-    if (bgVideo) bgVideo.style.display = 'block';
-    // Set button state
-    const button = document.querySelector('.toggle-mode-btn');
-    if (button) {
-      button.textContent = 'THEME';
-      button.classList.remove('light-btn', 'epic-btn');
-      button.classList.add('epic-btn');
-    }
-    
-    // Start directly on the services page
-    window.addEventListener('DOMContentLoaded', function() {
-      enterPortal();
-    });
-  </script>
+
+    <script src="js/modern.js"></script>
 </body>
 </html> 
