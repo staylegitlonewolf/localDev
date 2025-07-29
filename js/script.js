@@ -273,11 +273,35 @@ function loadShopContent() {
 }
 // --- Restore Portal Content (logo click) ---
 function restorePortalContent() {
+  // Hide all service-specific sections first
+  const serviceSections = [
+    'health-root',
+    'solar-root', 
+    'contracting-root',
+    'model-root',
+    'wix-root',
+    'nil-root',
+    'portalContent'
+  ];
+  
+  serviceSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+
+  // Restore the main portal content
   if (portalContentBackup) {
     const portalContent = document.getElementById('portalContent');
     portalContent.innerHTML = portalContentBackup;
+    portalContent.style.display = 'block';
     attachCardEvents();
+  } else {
+    // If no backup exists, reload the page to get fresh portal content
+    window.location.reload();
   }
+  
+  // Scroll to top for better UX
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 // --- Theme Toggle Logic ---
 // (Removed top menu toggle logic, handled by button in side menu)
