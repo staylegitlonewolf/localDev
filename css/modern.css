@@ -160,7 +160,8 @@ p {
 .logo-img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    object-fit: contain;
+    margin-right: 10px;
 }
 
 .logo-text {
@@ -575,9 +576,10 @@ p {
 }
 
 .footer-logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 10px;
 }
 
 .footer-logo span {
@@ -1243,18 +1245,22 @@ html {
 
 .member-image {
     width: 100%;
-    height: 300px;
+    height: 350px;
     overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .team-member.featured .member-image {
-    height: 400px;
+    height: 450px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .member-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
     transition: var(--transition);
 }
 
@@ -1412,12 +1418,20 @@ html {
     align-items: center;
 }
 
-.about-image img {
+.about-image {
+    position: relative;
     width: 100%;
     height: 500px;
-    object-fit: cover;
+    overflow: hidden;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
 /* Active Navigation Link */
