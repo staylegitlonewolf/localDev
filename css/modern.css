@@ -36,7 +36,7 @@
     --accent-color: #ffd700;
     --text-dark: #ffffff;
     --text-light: #cccccc;
-    --text-white: #1a1a1a;
+    --text-white: #ffffff;
     --bg-light: #2a2a2a;
     --bg-dark: #1a1a1a;
     --bg-white: #2a2a2a;
@@ -297,19 +297,15 @@ p {
 .hero-subtitle {
     color: var(--text-white);
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     display: block;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-bottom: 1rem;
 }
 
 .hero-description {
     color: var(--text-white);
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    font-weight: 500;
+    opacity: 0.9;
 }
 
 .hero-buttons {
