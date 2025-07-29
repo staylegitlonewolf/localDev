@@ -15,15 +15,15 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="media/logo.png" alt="LVA.studio" class="logo-img">
-                <span class="logo-text">LVA.studio™</span>
+                <span class="logo-text">Living Victorious Always™</span>
             </div>
             
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="meet-the-team.html" class="nav-link">Team</a></li>
-                <li><a href="certification.html" class="nav-link">Certifications</a></li>
+                <li><a href="#" class="nav-link" onclick="openLightbox('teamLightbox'); return false;">Team</a></li>
+                <li><a href="#" class="nav-link" onclick="openLightbox('certLightbox'); return false;">Certifications</a></li>
                 <button id="themeToggle" class="theme-toggle">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -235,8 +235,8 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="meet-the-team.html">Team</a></li>
-                        <li><a href="certification.html">Certifications</a></li>
+                        <li><a href="#" onclick="openLightbox('teamLightbox'); return false;">Team</a></li>
+                        <li><a href="#" onclick="openLightbox('certLightbox'); return false;">Certifications</a></li>
                     </ul>
                 </div>
                 
@@ -257,15 +257,42 @@
   </footer>
   
     <!-- Service Modal -->
-    <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalContent"></div>
+    <div id="serviceModal" class="service-modal">
+        <!-- Modal content will be dynamically loaded -->
+    </div>
+
+    <!-- Team Lightbox Modal -->
+    <div id="teamLightbox" class="lightbox-modal">
+        <div class="lightbox-content">
+            <div class="lightbox-header">
+                <h2>Meet Our Team</h2>
+                <button class="lightbox-close" onclick="closeLightbox('teamLightbox')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="lightbox-body">
+                <iframe id="teamIframe" src="meet-the-team.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certification Lightbox Modal -->
+    <div id="certLightbox" class="lightbox-modal">
+        <div class="lightbox-content">
+            <div class="lightbox-header">
+                <h2>Licenses & Certifications</h2>
+                <button class="lightbox-close" onclick="closeLightbox('certLightbox')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="lightbox-body">
+                <iframe id="certIframe" src="certification.html" frameborder="0"></iframe>
+            </div>
         </div>
     </div>
 
     <!-- Loading Spinner -->
-    <div id="loadingSpinner" class="loading-spinner">
+    <div class="loading-spinner" id="loadingSpinner">
         <div class="spinner"></div>
     </div>
 

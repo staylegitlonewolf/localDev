@@ -548,7 +548,62 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
 });
 
-// Export functions for global access
+// Make functions globally available
 window.showServiceDetails = showServiceDetails;
 window.closeServiceModal = closeServiceModal;
 window.contactUs = contactUs;
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+
+// Lightbox Functions
+function openLightbox(lightboxId) {
+    const lightbox = document.getElementById(lightboxId);
+    if (lightbox) {
+        lightbox.style.display = 'block';
+        document.body.classList.add('lightbox-open');
+        
+        // Focus on the lightbox for accessibility
+        lightbox.focus();
+        
+        // Add escape key listener
+        document.addEventListener('keydown', handleEscapeKey);
+    }
+}
+
+function closeLightbox(lightboxId) {
+    const lightbox = document.getElementById(lightboxId);
+    if (lightbox) {
+        lightbox.classList.add('closing');
+        
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+            lightbox.classList.remove('closing');
+            document.body.classList.remove('lightbox-open');
+        }, 300);
+        
+        // Remove escape key listener
+        document.removeEventListener('keydown', handleEscapeKey);
+    }
+}
+
+function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+        const openLightboxes = document.querySelectorAll('.lightbox-modal[style*="display: block"]');
+        openLightboxes.forEach(lightbox => {
+            closeLightbox(lightbox.id);
+        });
+    }
+}
+
+// Close lightbox when clicking outside content
+document.addEventListener('DOMContentLoaded', function() {
+    const lightboxes = document.querySelectorAll('.lightbox-modal');
+    
+    lightboxes.forEach(lightbox => {
+        lightbox.addEventListener('click', function(event) {
+            if (event.target === lightbox) {
+                closeLightbox(lightbox.id);
+            }
+        });
+    });
+});
