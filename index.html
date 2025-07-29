@@ -14,15 +14,19 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Logo" class="logo-img">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="LVA.studio Logo" class="logo-img">
                 <span class="logo-text">LVA.studio™</span>
             </div>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            
             <div class="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,8 +39,8 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <video autoplay muted loop class="hero-video">
-                <source src="media/background.mp4" type="video/mp4">
-            </video>
+    <source src="media/background.mp4" type="video/mp4">
+  </video>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -109,18 +113,36 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Health Insurance</h3>
-                    <p>Comprehensive health insurance solutions for individuals, families, and businesses.</p>
+                    <p>Comprehensive health insurance solutions for individuals, families, and businesses with competitive pricing and excellent coverage.</p>
+                    
+                    <div class="pricing-highlights">
+                        <div class="pricing-item">
+                            <span class="price">$120<span>/month</span></span>
+                            <span class="plan-type">Basic Coverage</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="price">$300<span>/month</span></span>
+                            <span class="plan-type">Family Plans</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="price">$225<span>/month</span></span>
+                            <span class="plan-type">Self-Employed</span>
+                        </div>
+                    </div>
+                    
                     <ul class="service-features">
                         <li>Individual & Family Plans</li>
                         <li>Business Group Coverage</li>
                         <li>Medicare Supplements</li>
-                        <li>Expert Guidance</li>
+                        <li>Dental & Vision Plans</li>
+                        <li>Prescription Drug Coverage</li>
+                        <li>Mental Health Services</li>
                     </ul>
                     <div class="service-cta">
-                        <button class="btn btn-outline" onclick="showServiceDetails('health')">Learn More</button>
-                    </div>
-                </div>
-
+                        <button class="btn btn-primary" onclick="showServiceDetails('health')">Learn More</button>
+    </div>
+  </div>
+  
                 <!-- NIL Partnerships -->
                 <div class="service-card" data-service="nil">
                     <div class="service-icon">
@@ -145,86 +167,35 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About LVA.studio™</h2>
+                <p class="section-subtitle">We're a full-service digital solutions company helping businesses and individuals succeed in the modern world.</p>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About LVA.studio™</h2>
-                    <p>We're a full-service digital agency committed to helping businesses and individuals thrive in the modern digital landscape. Our comprehensive approach combines cutting-edge web development with strategic partnerships in solar energy, health insurance, and NIL opportunities.</p>
+                    <h2>Your Success is Our Mission</h2>
+                    <p>At LVA.studio™, we believe in "Living Victorious Always." We provide comprehensive digital solutions that help our clients achieve their goals and maximize their potential.</p>
+                    <p>From custom web development to solar solutions, health insurance, and NIL partnerships, we're your trusted partner for all your digital and business needs.</p>
+                    
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">500+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
                             <span class="stat-label">Projects Completed</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support Available</span>
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Studio">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="LVA.studio Team">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to start your next project? Let's discuss how we can help you succeed.</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contact@lva.studio</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>(555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Nationwide Service</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="">Select Service</option>
-                            <option value="web">Web Development</option>
-                            <option value="solar">Solar Solutions</option>
-                            <option value="health">Health Insurance</option>
-                            <option value="nil">NIL Partnerships</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
@@ -235,45 +206,53 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="https://static.wixstatic.com/media/b2f74b_35458543ca6540f4bad3ad4cb452ffac~mv2.png/v1/fill/w_209,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/lva%20baby%20blue%203d%20no%20backgroud.png" alt="LVA Logo">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="LVA.studio Logo">
                         <span>LVA.studio™</span>
                     </div>
-                    <p>Living Victorious Always - Your partner in digital success.</p>
-                </div>
+                    <p>Living Victorious Always. We help businesses and individuals succeed through comprehensive digital solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+    </div>
+                
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Our Services</h4>
                     <ul>
                         <li><a href="#services">Web Development</a></li>
                         <li><a href="#services">Solar Solutions</a></li>
                         <li><a href="#services">Health Insurance</a></li>
                         <li><a href="#services">NIL Partnerships</a></li>
                     </ul>
-                </div>
+    </div>
+    
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> staylegitdev@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nationwide Service</li>
+                    </ul>
                 </div>
-            </div>
+  </div>
+  
             <div class="footer-bottom">
-                <p>&copy; 2024 LVA.studio™. All rights reserved.</p>
+                <p>&copy; 2024 LVA.studio™. All rights reserved. | Living Victorious Always</p>
             </div>
         </div>
-    </footer>
-
+  </footer>
+  
     <!-- Service Modal -->
     <div id="serviceModal" class="modal">
         <div class="modal-content">
@@ -287,6 +266,8 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="js/modern.js"></script>
 </body>
 </html> 

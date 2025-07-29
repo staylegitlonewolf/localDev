@@ -1,5 +1,9 @@
 // Modern JavaScript for LVA.studio™
 
+// Theme Management
+let currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
 // Service Details Data
 const serviceDetails = {
     web: {
@@ -75,7 +79,7 @@ const serviceDetails = {
     health: {
         title: "Health Insurance",
         icon: "fas fa-shield-alt",
-        description: "Comprehensive health insurance solutions for individuals, families, and businesses.",
+        description: "Comprehensive health insurance solutions for individuals, families, and businesses with competitive pricing.",
         features: [
             "Individual & Family Plans",
             "Business Group Coverage",
@@ -88,19 +92,22 @@ const serviceDetails = {
         ],
         plans: [
             {
-                name: "Individual Plans",
-                description: "Comprehensive coverage for individuals",
+                name: "Basic Coverage Plans",
+                price: "Starting at just $120/month",
+                description: "Ideal for individuals looking for essential health benefits on a budget.",
                 features: ["Preventive Care", "Prescription Drugs", "Mental Health", "Emergency Services"]
             },
             {
-                name: "Family Plans",
-                description: "Protect your entire family",
+                name: "Family Health Plans",
+                price: "As low as $300/month",
+                description: "Affordable protection for your entire household, including pediatric care.",
                 features: ["Family Coverage", "Maternity Care", "Pediatric Services", "Dental & Vision"]
             },
             {
-                name: "Business Plans",
-                description: "Group coverage for your business",
-                features: ["Employee Benefits", "Tax Advantages", "Customizable Plans", "Administrative Support"]
+                name: "Self-Employed Packages",
+                price: "From only $225/month",
+                description: "Flexible, comprehensive options tailored to freelancers and small business owners.",
+                features: ["Flexible Coverage", "Tax Advantages", "Business Benefits", "Administrative Support"]
             }
         ],
         benefits: [
@@ -110,6 +117,12 @@ const serviceDetails = {
             "Ongoing Assistance",
             "Claims Support",
             "Annual Reviews"
+        ],
+        states: [
+            "AL", "AR", "CO", "DE", "FL", "GA", "IA", "IL", "IN", "KS", 
+            "KY", "LA", "MD", "MI", "MO", "MS", "MT", "NC", "NE", "NV", 
+            "NH", "OH", "OK", "OR", "SC", "SD", "TN", "TX", "UT", "VA", 
+            "WA", "WI", "WV", "WY"
         ]
     },
     nil: {
@@ -161,8 +174,33 @@ const navMenu = document.querySelector('.nav-menu');
 const modal = document.getElementById('serviceModal');
 const modalContent = document.getElementById('modalContent');
 const closeModal = document.querySelector('.close');
-const contactForm = document.getElementById('contactForm');
+const themeToggle = document.getElementById('themeToggle');
 const loadingSpinner = document.getElementById('loadingSpinner');
+
+// Theme Toggle Functionality
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    
+    // Update theme toggle icon
+    const icon = themeToggle.querySelector('i');
+    if (currentTheme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
+
+// Initialize theme toggle icon
+function initializeThemeToggle() {
+    const icon = themeToggle.querySelector('i');
+    if (currentTheme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
 
 // Navigation Toggle
 navToggle.addEventListener('click', () => {
@@ -178,13 +216,20 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Theme toggle event listener
+themeToggle.addEventListener('click', toggleTheme);
+
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.background = currentTheme === 'dark' 
+            ? 'rgba(42, 42, 42, 0.98)' 
+            : 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = currentTheme === 'dark' 
+            ? 'rgba(42, 42, 42, 0.95)' 
+            : 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
 });
@@ -250,6 +295,7 @@ function showServiceDetails(service) {
                         ${serviceData.plans.map(plan => `
                             <div class="plan-card">
                                 <h4>${plan.name}</h4>
+                                <div class="package-price">${plan.price}</div>
                                 <p>${plan.description}</p>
                                 <ul>
                                     ${plan.features.map(feature => `<li>${feature}</li>`).join('')}
@@ -287,6 +333,18 @@ function showServiceDetails(service) {
                                 <span>${benefit}</span>
                             </div>
                         `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                ${serviceData.states ? `
+                <div class="service-section">
+                    <h3>States We Serve</h3>
+                    <div class="states-grid">
+                        <p>We proudly serve residents in:</p>
+                        <div class="states-list">
+                            ${serviceData.states.map(state => `<span class="state-badge">${state}</span>`).join('')}
+                        </div>
                     </div>
                 </div>
                 ` : ''}
@@ -329,8 +387,23 @@ function closeServiceModal() {
 // Contact Us function
 function contactUs(service) {
     closeServiceModal();
-    document.getElementById('service').value = service;
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    // Open email client with service information
+    const emailSubject = `LVA.studio - ${service} Service Inquiry`;
+    const emailBody = `Hello LVA.studio™,
+
+I'm interested in your ${service} services. Please provide more information about:
+
+- Available options and pricing
+- Next steps to get started
+- Any requirements or questions I should consider
+
+Thank you!
+
+---
+This inquiry was sent from the LVA.studio website.`;
+    
+    const mailtoLink = `mailto:staylegitdev@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(mailtoLink);
 }
 
 // Modal event listeners
@@ -338,34 +411,6 @@ closeModal.addEventListener('click', closeServiceModal);
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeServiceModal();
-    }
-});
-
-// Contact Form Handling
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Show loading spinner
-    loadingSpinner.classList.add('show');
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    try {
-        // Simulate form submission (replace with actual endpoint)
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Show success message
-        showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
-        
-        // Reset form
-        contactForm.reset();
-        
-    } catch (error) {
-        showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
-    } finally {
-        loadingSpinner.classList.remove('show');
     }
 });
 
@@ -441,8 +486,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-card, .about-content, .contact-content, .stat');
+    const animateElements = document.querySelectorAll('.service-card, .about-content, .stat');
     animateElements.forEach(el => observer.observe(el));
+    
+    // Initialize theme toggle
+    initializeThemeToggle();
 });
 
 // Parallax effect for hero section

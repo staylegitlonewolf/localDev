@@ -170,7 +170,7 @@ localDev/
 
 ## 📞 Contact Information
 
-- **Email**: contact@lva.studio
+- **Email**: staylegitdev@gmail.com
 - **Phone**: (555) 123-4567
 - **Location**: Nationwide Service
 - **Website**: https://lva.studio
